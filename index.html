@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Jornada de Javert</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        main {
+            padding: 1rem;
+        }
+
+        button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem 0;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        section {
+            margin: 1rem 0;
+        }
+
+        .oculto {
+            display: none;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>A Jornada de Javert</h1>
+        <p>Uma história interativa de aventura e escolha</p>
+    </header>
+
+    <main>
+        <section id="introducao">
+            <h2>Introdução</h2>
+            <p>Javert encontra um mapa mágico que revela a localização de um amuleto poderoso. Sua jornada começa na Floresta das Sombras, onde diversas escolhas definirão seu destino.</p>
+            <button onclick="mostrarCena('floresta')">Começar a Jornada</button>
+        </section>
+
+        <section id="floresta" class="oculto">
+            <h2>Floresta das Sombras</h2>
+            <p>Você está na Floresta das Sombras. Escolha o que fazer a seguir:</p>
+            <button onclick="mostrarCena('encontroAmuleto')">Continuar a busca pelo amuleto</button>
+            <button onclick="mostrarCena('feitiço')">Aceitar um feitiço de proteção</button>
+            <button onclick="mostrarCena('voltarCasa')">Voltar para casa</button>
+        </section>
+
+        <section id="encontroAmuleto" class="oculto">
+            <h2>Encontro com o Amuleto</h2>
+            <p>Você encontra o amuleto que pode realizar um desejo. O que deseja?</p>
+            <button onclick="mostrarCena('poder')">Desejo de Poder Supremo</button>
+            <button onclick="mostrarCena('paz')">Desejo de Paz Eterna</button>
+            <button onclick="mostrarCena('imortalidade')">Desejo de Imortalidade</button>
+            <button onclick="mostrarCena('amor')">Desejo de Amor Verdadeiro</button>
+        </section>
+
+        <section id="poder" class="oculto">
+            <h2>Cenário de Poder Supremo</h2>
+            <p>Você fez o desejo de poder supremo. O que acontece a seguir?</p>
+            <button onclick="mostrarCena('sacrifício')">Sacrifício Maior</button>
+            <button onclick="mostrarCena('solitária')">Rainha Solitária</button>
+        </section>
+
+        <section id="sacrifício" class="oculto">
+            <h2>Sacrifício Maior</h2>
+            <p>Você se torna uma líder poderosa, mas carrega o peso da perda de seu pai.</p>
+            <button onclick="mostrarCena('fim')">Final</button>
+        </section>
+
+        <section id="solitária" class="oculto">
+            <h2>Rainha Solitária</h2>
+            <p>Você governa com grande poder, mas vive isolada emocionalmente.</p>
+            <button onclick="mostrarCena('fim')">Final</button>
+        </section>
+
+        <section id="paz" class="oculto">
+            <h2>Cenário de Paz Eterna</h2>
+            <p>Você fez o desejo de paz eterna. O que acontece a seguir?</p>
+            <button onclick="mostrarCena('estagnação')">Paz da Estagnação</button>
+            <button onclick="mostrarCena('sonhos')">Reino dos Sonhos</button>
+        </section>
+
+        <section id="estagnação" class="oculto">
+            <h2>Paz da Estagnação</h2>
+            <p>O reino entra em estagnação e sem crescimento.</p>
+            <button onclick="mostrarCena('fim')">Final</button>
+        </section>
+
+        <section id="sonhos" class="oculto">
+            <h2>Reino dos Sonhos</h2>
+            <p>O reino vive em um sonho perpétuo, mas sem desafios reais.</p>
+            <button onclick="mostrarCena('fim')">Final</button>
+        </section>
+
+        <section id="imortalidade" class="oculto">
+            <h2>Cenário de Imortalidade</h2>
+            <p>Você fez o desejo de imortalidade. O que acontece a seguir?</p>
+            <button onclick="mostrarCena('eterna')">Rainha Eterna</button>
+            <button onclick="mostrarCena('preço')">Preço da Eternidade</button>
+        </section>
+
+        <section id="eterna" class="oculto">
+            <h2>Rainha Eterna</h2>
+            <p>Você se torna imortal, mas vê todos ao seu redor morrerem e enfrenta solidão.</p>
+            <button onclick="mostrarCena('fim')">Final</button>
+        </section>
+
+        <section id="preço" class="oculto">
+            <h2>Preço da Eternidade</h2>
+            <p>Você vive com dor eterna e sofrimento, sem a possibilidade de morte.</p>
+            <button onclick="mostrarCena('fim')">Final</button>
+        </section>
+
+        <section id="amor" class="oculto">
+            <h2>Cenário de Amor Verdadeiro</h2>
+            <p>Você fez o desejo de amor verdadeiro. O que acontece a seguir?</p>
+            <button onclick="mostrarCena('destrutivo')">Amor que Destrói</button>
+            <button onclick="mostrarCena('imortal')">Amor Imortal</button>
+        </section>
+
+        <section id="destrutivo" class="oculto">
+            <h2>Amor que Destrói</h2>
+            <p>Você encontra um príncipe possessivo e destrutivo, vivendo um amor complicado.</p>
+            <button onclick="mostrarCena('fim')">Final</button>
+        </section>
+
+        <section id="imortal" class="oculto">
+            <h2>Amor Imortal</h2>
+            <p>Você encontra Zarck e vive um amor eterno e desafiador.</p>
+            <button onclick="mostrarCena('fim')">Final</button>
+        </section>
+
+        <section id="feitiço" class="oculto">
+            <h2>Feitiço de Proteção</h2>
+            <p>Você aceita um feitiço de proteção e torna-se a guardiã da Floresta das Sombras, mas fica presa para sempre.</p>
+            <button onclick="mostrarCena('fim')">Final</button>
+        </section>
+
+        <section id="voltarCasa" class="oculto">
+            <h2>Voltar para Casa</h2>
+            <p>Você retorna ao seu reino, levando consigo as memórias e o conhecimento adquirido, mas não tem acesso ao amuleto.</p>
+            <button onclick="mostrarCena('fim')">Final</button>
+        </section>
+
+        <section id="fim" class="oculto">
+            <h2>Final</h2>
+            <p>Obrigado por explorar a história de Javert. Cada escolha leva a um desfecho diferente e molda a jornada de maneira única.</p>
+            <button onclick="mostrarCena('introducao')">Reiniciar</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 A Jornada de Javert. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function mostrarCena(id) {
+            // Oculta todas as seções
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(section => section.classList.add('oculto'));
+
+            // Mostra a seção correspondente
+            const section = document.getElementById(id);
+            section.classList.remove('oculto');
+        }
+    </script>
+</body>
+</html>
